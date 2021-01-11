@@ -1,0 +1,146 @@
+body {
+  background-color: black;
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: white;
+}
+
+li,
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  padding: 15px;
+}
+
+.search-form {
+  margin-top: 30px;
+  margin-left: 105px;
+}
+
+.input {
+  height: 30px;
+  width: 400px;
+  padding: 3px 8px;
+
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.photo-card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 20px;
+  width: calc((100% - 150px) / 3);
+  padding: 15px;
+  background-color: white;
+}
+.photo {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+.stats-item {
+  margin-right: 10px;
+  color: black;
+  font-size: 20px;
+}
+
+.material-icons {
+  vertical-align: middle;
+  font-size: 25px;
+}
+
+.load-more {
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 30px;
+  width: 200px;
+  background-color: white;
+  padding: 3px 8px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.is-hidden {
+  display: none;
+}
+
+/********** modal **************/
+.lightbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--animation-duration) var(--timing-function);
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.lightbox__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 30px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox__content {
+  transform: scale(1);
+  padding: 30px;
+  transition: transform var(--animation-duration) var(--timing-function);
+}
+
+.lightbox.is-open .lightbox__content {
+  transform: scale(1);
+}
+
+.lightbox__image {
+  display: block;
+  width: auto;
+  height: auto;
+
+  margin-right: auto;
+  margin-left: auto;
+  object-fit: contain;
+
+  max-width: 75%;
+  max-height: 75%;
+}
